@@ -1,4 +1,4 @@
-from silo.base_file_structure import FileStructure
+from silo.file_types.base_file_structure import FileStructure
 
 
 class FolderStructure:

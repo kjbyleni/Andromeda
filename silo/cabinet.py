@@ -1,7 +1,7 @@
 import os
 import re
 
-from silo.base_folder_structure import FolderStructure
+from silo.folder_types.base_folder_structure import FolderStructure
 
 test_locator_regex = re.compile("test|spec")
 
