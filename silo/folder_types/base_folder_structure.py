@@ -9,5 +9,5 @@ class FolderStructure:
         self.folder_contents[file_path] = FileStructure(file_path)
         self.folder_contents[file_path].update_contents()
 
-    def find_file(self, key):
+    def find_file(self, key) -> FileStructure:
         return self.folder_contents[key]

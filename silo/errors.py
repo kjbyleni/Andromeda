@@ -1,0 +1,3 @@
+class DirectoryNotSpecifiedError(Exception):
+    pass
+
