@@ -7,6 +7,8 @@ class FileStructure:
         with open(self.path_to_file, 'r') as code:
             self.contents = code.readlines()
 
-    def print_contents(self):
+    def get_contents_as_single_line(self):
+        content_str = ''
         for line in self.contents:
-            print(line)
+            content_str += f' {line}'
+        return content_str

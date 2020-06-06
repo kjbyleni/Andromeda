@@ -20,4 +20,4 @@ class FolderStructure:
 
     def print_folder_contents(self):
         for file_location in self.folder_contents:
-            self.folder_contents[file_location].print_contents()
+            self.folder_contents[file_location].get_contents_as_single_line()
