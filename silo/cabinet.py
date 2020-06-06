@@ -28,7 +28,7 @@ class Cabinet:
                     print("Other ->", name)
 
     def print_test_files_locations(self):
-        self.test_folder.print_paths()
+        self.test_folder.get_paths_in_folder()
 
     def print_code_files_locations(self):
-        self.code_folder.print_paths()
+        self.code_folder.get_paths_in_folder()
