@@ -23,9 +23,9 @@ def test_default_import(imports_file):
     assert isinstance(imports_file.file_imports[0], PurifiedImports)
 
 
-def test_default_import_purifies_imports_names(imports_file):
+def test_default_import_purifies_default_imports_names(imports_file):
     imports_file.read_imports()
-    assert imports_file.file_imports[0].imported_names == 'defaultExport'
+    assert imports_file.file_imports[0].default == 'defaultExport'
 
 
 def test_default_import_purifies_imports_path(imports_file):

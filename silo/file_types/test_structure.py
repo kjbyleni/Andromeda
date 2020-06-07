@@ -1,24 +1,12 @@
 import re
 from silo.file_types.base_file_structure import FileStructure
-
-is_import = re.compile("^import .+ from .+")
-
-
-def purify_code_path(code_path_from_import):
-    pure_path = code_path_from_import.replace('"', '')
-    pure_path = pure_path.replace(";", '')
-    pure_path = pure_path.replace("'", '')
-    return pure_path.strip()
-
-
-def purify_code_imports(code_imports):
-    pure_imports = code_imports.replace('import', '')
-    return pure_imports.strip()
+import silo.file_types.utils as utils
 
 
 class PurifiedImports:
     def __init__(self, imported_names, import_from_path):
-        self.imported_names = imported_names
+        self.default = utils.purify_default_import_name(imported_names)
+        self.imported_names = utils.purify_import_names(imported_names)
         self.import_from_path = import_from_path
 
 
@@ -30,13 +18,13 @@ class TestStructure(FileStructure):
 
     def read_imports(self):
         for line in self.contents:
-            if is_import.search(line):
+            if utils.is_import.search(line):
                 self.handle_line_import(line)
 
     def handle_line_import(self, line):
         split_from = line.split('from')
-        code_path = purify_code_path(split_from[1])
-        code_imports = purify_code_imports(split_from[0])
+        code_path = utils.purify_code_path(split_from[1])
+        code_imports = utils.purify_code_imports(split_from[0])
         self.file_imports.append(PurifiedImports(imported_names=code_imports, import_from_path=code_path))
 
 
