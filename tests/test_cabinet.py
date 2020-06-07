@@ -53,3 +53,10 @@ def test_organize_files_sorts_test_files(file_cabinet):
 def test_organize_files_sorts_js_files(file_cabinet):
     assert file_cabinet.code_folder.find_file(PATH_TO_FAKE_JS_CODE_FILE).contents[
                0] == '//js file for testing'
+
+
+'''Test for other files'''
+
+
+def test_other_files_sorts_txt_files(file_cabinet):
+    assert file_cabinet.others == ['./data_for_tests/fake_src_folder/textDocument.txt']

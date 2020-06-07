@@ -27,7 +27,9 @@ class Cabinet:
                     self.others.append(os.path.join(path, name))
 
     def print_test_files_locations(self):
-        self.test_folder.get_paths_in_folder()
+        for file in list(self.test_folder.folder_contents.keys()):
+            print(file)
 
     def print_code_files_locations(self):
-        self.code_folder.get_paths_in_folder()
+        for file in list(self.code_folder.folder_contents.keys()):
+            print(file)

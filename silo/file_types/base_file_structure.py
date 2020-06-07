@@ -1,6 +1,7 @@
 class FileStructure:
     def __init__(self, path_to_file):
         self.path_to_file = path_to_file
+        self.folder_breakdown = path_to_file.split('/')
         self.contents = []
 
     def update_contents(self):

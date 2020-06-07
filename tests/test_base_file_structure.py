@@ -47,3 +47,7 @@ def test_update_contents_sets_contents_as_array(text_file):
 def test_get_contents_returns_expected_when_file_contains_information(text_file):
     text_file.update_contents()
     assert text_file.get_contents_as_single_line() == ' Hello, This is a text test file.\n This Text file has multiple lines'
+
+
+def test_folder_breakdown_get_seporated(text_file):
+    assert len(text_file.folder_breakdown) == 3
