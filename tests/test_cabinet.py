@@ -44,7 +44,7 @@ def test_organize_files_sorts_spec_files(file_cabinet):
 
 def test_organize_files_sorts_test_files(file_cabinet):
     assert file_cabinet.test_folder.find_file(PATH_TO_FAKE_TEST_FILE).contents[
-               0] == '//test file for testing'
+               0] == '//test file for testing\n'
 
 
 '''Tests for Code files'''
@@ -52,7 +52,7 @@ def test_organize_files_sorts_test_files(file_cabinet):
 
 def test_organize_files_sorts_js_files(file_cabinet):
     assert file_cabinet.code_folder.find_file(PATH_TO_FAKE_JS_CODE_FILE).contents[
-               0] == '//js file for testing'
+               0] == '//js file for testing\n'
 
 
 '''Test for other files'''
